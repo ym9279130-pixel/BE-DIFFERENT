@@ -1,0 +1,282 @@
+/* =====================================================
+   BE DIFFERENT — RESPONSIVE DESIGN
+   Mobile + Tablet
+   Does NOT change desktop design
+===================================================== */
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    /* General */
+
+    .container,
+    .shop-container,
+    .about-container {
+        width: 92%;
+        max-width: 100%;
+    }
+
+
+    /* Products */
+
+    .shop-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+
+    /* Categories */
+
+    .categories {
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+
+    .categories::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* About */
+
+    .about-content {
+        gap: 35px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* Prevent horizontal overflow */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* =================================================
+       GENERAL SPACING
+    ================================================= */
+
+    section {
+        max-width: 100%;
+    }
+
+
+    /* =================================================
+       HERO
+    ================================================= */
+
+    .hero-section {
+        min-height: auto;
+    }
+
+    .hero-section h1 {
+        font-size: clamp(42px, 12vw, 70px);
+        line-height: 0.95;
+    }
+
+    .hero-section p {
+        max-width: 90%;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* =================================================
+       PRODUCTS
+    ================================================= */
+
+    .shop-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .shop-product {
+        min-width: 0;
+    }
+
+    .shop-product:hover {
+        transform: translateY(-3px) !important;
+    }
+
+
+    /* Product image */
+
+    .shop-image {
+        width: 100%;
+    }
+
+
+    /* Product text */
+
+    .shop-product h3 {
+        font-size: 14px;
+    }
+
+    .shop-product p {
+        font-size: 13px;
+    }
+
+
+    /* Add to cart */
+
+    .add-to-cart {
+        width: 100%;
+        font-size: 11px;
+        padding: 10px 8px;
+    }
+
+
+    /* =================================================
+       CATEGORIES
+    ================================================= */
+
+    .categories {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 8px;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .categories::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-button {
+        flex: 0 0 auto;
+        font-size: 11px;
+        padding: 9px 14px;
+    }
+
+
+    /* =================================================
+       ABOUT
+    ================================================= */
+
+    .about-container {
+        width: 90%;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .about-title h2 {
+        font-size: clamp(42px, 13vw, 70px);
+        line-height: 0.9;
+    }
+
+    .about-text {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+
+    /* =================================================
+       QUICK VIEW
+    ================================================= */
+
+    .quick-view-modal {
+        width: calc(100% - 24px);
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+
+    /* =================================================
+       CART
+    ================================================= */
+
+    .cart-drawer {
+        width: min(100%, 400px);
+    }
+
+
+    /* =================================================
+       WISHLIST
+    ================================================= */
+
+    .wishlist-drawer {
+        width: min(100%, 400px);
+    }
+
+
+    /* =================================================
+       CHECKOUT
+    ================================================= */
+
+    #checkout-overlay {
+        padding: 12px;
+    }
+
+    .checkout-modal {
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+
+    /* =================================================
+       CUSTOM ORDER
+    ================================================= */
+
+    .custom-order-box {
+        width: 100%;
+    }
+
+
+    /* =================================================
+       BUTTONS
+    ================================================= */
+
+    .hero-button {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .shop-products {
+        gap: 9px;
+    }
+
+    .shop-product h3 {
+        font-size: 13px;
+    }
+
+    .shop-product p {
+        font-size: 12px;
+    }
+
+    .add-to-cart {
+        font-size: 10px;
+        padding: 9px 5px;
+    }
+
+}

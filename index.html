@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BE DIFFERENT — Women's Fashion</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="effects.css">
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="navbar">
+
+        <a href="#home" class="logo">
+            BE DIFFERENT
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#shop">SHOP</a>
+            <a href="#new-arrivals">NEW</a>
+            <a href="#custom">CREATE</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+
+        <div style="display:flex; gap:8px; align-items:center;">
+
+            <button class="wishlist-button" id="open-wishlist">
+                ♡ <span id="wishlist-count">0</span>
+            </button>
+
+            <button class="cart-button" id="open-cart">
+                CART (<span id="cart-count">0</span>)
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     CART OVERLAY
+========================= -->
+
+<div class="cart-overlay" id="cart-overlay"></div>
+
+
+<!-- =========================
+     CART DRAWER
+========================= -->
+
+<aside class="cart-drawer" id="cart-drawer">
+
+    <div class="cart-header">
+
+        <h2>YOUR CART</h2>
+
+        <button class="cart-close" id="close-cart">
+            ×
+        </button>
+
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total">
+
+        <span>SUBTOTAL</span>
+
+        <span>
+            EGP <span id="cart-subtotal">0</span>
+        </span>
+
+    </div>
+
+    <button class="checkout-button" id="open-checkout">
+        CHECKOUT
+    </button>
+
+</aside>
+
+
+<!-- =========================
+     WISHLIST OVERLAY
+========================= -->
+
+<div
+    id="wishlist-overlay"
+    style="
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.45);
+        opacity:0;
+        visibility:hidden;
+        transition:.3s;
+        z-index:2500;
+    "
+></div>
+
+
+<!-- =========================
+     WISHLIST DRAWER
+========================= -->
+
+<aside
+    id="wishlist-drawer"
+    style="
+        position:fixed;
+        top:0;
+        right:-420px;
+        width:420px;
+        max-width:100%;
+        height:100vh;
+        background:#fff;
+        z-index:2501;
+        padding:25px;
+        overflow-y:auto;
+        transition:right .3s ease;
+    "
+>
+
+    <div
+        style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding-bottom:18px;
+            border-bottom:1px solid #eee;
+        "
+    >
+
+        <h2>WISHLIST</h2>
+
+        <button
+            id="close-wishlist"
+            style="
+                background:none;
+                border:none;
+                font-size:25px;
+                cursor:pointer;
+            "
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div id="wishlist-items"></div>
+
+</aside>
+
+
+<!-- =========================
+     CHECKOUT
+========================= -->
+
+<div
+    id="checkout-overlay"
+    class="checkout-overlay"
+>
+
+    <div class="checkout-modal">
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:25px;
+            "
+        >
+
+            <h2>CHECKOUT</h2>
+
+            <button
+                id="close-checkout"
+                style="
+                    border:none;
+                    background:none;
+                    font-size:25px;
+                    cursor:pointer;
+                "
+            >
+                ×
+            </button>
+
+        </div>
+
+        <form id="checkout-form">
+
+            <label>
+                FULL NAME
+            </label>
+
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="Your name"
+                required
+            >
+
+            <label>
+                WHATSAPP NUMBER
+            </label>
+
+            <input
+                type="tel"
+                id="customer-phone"
+                placeholder="01xxxxxxxxx"
+                required
+            >
+
+            <label>
+                DELIVERY ADDRESS
+            </label>
+
+            <textarea
+                id="customer-address"
+                placeholder="Your full delivery address"
+                required
+            ></textarea>
+
+            <label>
+                ADDITIONAL NOTES
+            </label>
+
+            <textarea
+                id="customer-notes"
+                placeholder="Optional"
+            ></textarea>
+
+            <button
+                type="submit"
+                class="checkout-submit"
+            >
+                PLACE ORDER ON WHATSAPP
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HOME / HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p
+            style="
+                font-size:11px;
+                letter-spacing:4px;
+                font-weight:700;
+                margin-bottom:15px;
+                color:#777;
+            "
+        >
+            WOMEN'S FASHION
+        </p>
+
+        <h1>
+            BE<br>
+            DIFFERENT.
+        </h1>
+
+        <p>
+            Fashion made for women who choose their own style.
+        </p>
+
+        <a href="#shop">
+
+            <button>
+                SHOP COLLECTION
+            </button>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SHOP
+========================= -->
+
+<section id="shop">
+
+    <div class="section-title">
+
+        <h2>SHOP</h2>
+
+        <p>
+            Discover pieces made for your everyday style.
+        </p>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <button
+            class="category-button active"
+            data-category="all"
+        >
+            ALL
+        </button>
+
+        <button
+            class="category-button"
+            data-category="dresses"
+        >
+            DRESSES
+        </button>
+
+        <button
+            class="category-button"
+            data-category="pants"
+        >
+            PANTS
+        </button>
+
+        <button
+            class="category-button"
+            data-category="tshirts"
+        >
+            T-SHIRTS
+        </button>
+
+        <button
+            class="category-button"
+            data-category="tops"
+        >
+            TOPS
+        </button>
+
+        <button
+            class="category-button"
+            data-category="jackets"
+        >
+            JACKETS
+        </button>
+
+        <button
+            class="category-button"
+            data-category="shoes"
+        >
+            SHOES
+        </button>
+
+        <button
+            class="category-button"
+            data-category="hijabs"
+        >
+            HIJABS
+        </button>
+
+        <button
+            class="category-button"
+            data-category="makeup"
+        >
+            MAKEUP
+        </button>
+
+        <button
+            class="category-button"
+            data-category="accessories"
+        >
+            ACCESSORIES
+        </button>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <div class="shop-products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <article
+            class="shop-product"
+            data-category="dresses"
+            data-name="Elegant Dress"
+            data-price="1299"
+        >
+
+            <div class="shop-image">
+
+                <span class="product-badge">
+                    NEW
+                </span>
+
+            </div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Elegant Dress
+                </h3>
+
+                <p>
+                    EGP 1,299
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Elegant Dress"
+                data-price="1299"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Elegant Dress"
+                data-price="1299"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+
+        <article
+            class="shop-product"
+            data-category="pants"
+            data-name="Wide Leg Pants"
+            data-price="899"
+        >
+
+            <div class="shop-image"></div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Wide Leg Pants
+                </h3>
+
+                <p>
+                    EGP 899
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Wide Leg Pants"
+                data-price="899"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Wide Leg Pants"
+                data-price="899"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+
+        <article
+            class="shop-product"
+            data-category="tshirts"
+            data-name="Essential T-Shirt"
+            data-price="599"
+        >
+
+            <div class="shop-image"></div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Essential T-Shirt
+                </h3>
+
+                <p>
+                    EGP 599
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Essential T-Shirt"
+                data-price="599"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Essential T-Shirt"
+                data-price="599"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article
+            class="shop-product"
+            data-category="tops"
+            data-name="Satin Top"
+            data-price="749"
+        >
+
+            <div class="shop-image"></div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Satin Top
+                </h3>
+
+                <p>
+                    EGP 749
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Satin Top"
+                data-price="749"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Satin Top"
+                data-price="749"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+
+        <!-- PRODUCT 5 -->
+
+        <article
+            class="shop-product"
+            data-category="jackets"
+            data-name="Minimal Blazer"
+            data-price="1499"
+        >
+
+            <div class="shop-image"></div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Minimal Blazer
+                </h3>
+
+                <p>
+                    EGP 1,499
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Minimal Blazer"
+                data-price="1499"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Minimal Blazer"
+                data-price="1499"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+
+        <!-- PRODUCT 6 -->
+
+        <article
+            class="shop-product"
+            data-category="shoes"
+            data-name="Classic Sneakers"
+            data-price="1199"
+        >
+
+            <div class="shop-image"></div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Classic Sneakers
+                </h3>
+
+                <p>
+                    EGP 1,199
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Classic Sneakers"
+                data-price="1199"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Classic Sneakers"
+                data-price="1199"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+
+        <!-- PRODUCT 7 -->
+
+        <article
+            class="shop-product"
+            data-category="hijabs"
+            data-name="Premium Hijab"
+            data-price="349"
+        >
+
+            <div class="shop-image"></div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Premium Hijab
+                </h3>
+
+                <p>
+                    EGP 349
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Premium Hijab"
+                data-price="349"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Premium Hijab"
+                data-price="349"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+
+        <!-- PRODUCT 8 -->
+
+        <article
+            class="shop-product"
+            data-category="makeup"
+            data-name="Beauty Essentials"
+            data-price="699"
+        >
+
+            <div class="shop-image"></div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Beauty Essentials
+                </h3>
+
+                <p>
+                    EGP 699
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Beauty Essentials"
+                data-price="699"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Beauty Essentials"
+                data-price="699"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+
+        <!-- PRODUCT 9 -->
+
+        <article
+            class="shop-product"
+            data-category="accessories"
+            data-name="Signature Bag"
+            data-price="1099"
+        >
+
+            <div class="shop-image"></div>
+
+            <div class="shop-info">
+
+                <h3>
+                    Signature Bag
+                </h3>
+
+                <p>
+                    EGP 1,099
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                data-name="Signature Bag"
+                data-price="1099"
+            >
+                ADD TO CART
+            </button>
+
+            <button
+                class="wishlist-btn"
+                data-name="Signature Bag"
+                data-price="1099"
+                style="
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                    width:36px;
+                    height:36px;
+                    border:none;
+                    background:#fff;
+                    font-size:20px;
+                    z-index:5;
+                "
+            >
+                ♡
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NEW ARRIVALS
+========================= -->
+
+<section
+    class="new-arrivals"
+    id="new-arrivals"
+>
+
+    <div class="section-title">
+
+        <h2>
+            NEW ARRIVALS
+        </h2>
+
+        <p>
+            Fresh pieces from BE DIFFERENT.
+        </p>
+
+    </div>
+
+    <div class="arrivals-grid">
+
+        <div class="arrival-card">
+
+            <div
+                style="
+                    height:330px;
+                    background:#eee;
+                "
+            ></div>
+
+            <h3>
+                Signature Dress
+            </h3>
+
+            <p>
+                EGP 1,599
+            </p>
+
+        </div>
+
+
+        <div class="arrival-card">
+
+            <div
+                style="
+                    height:330px;
+                    background:#eee;
+                "
+            ></div>
+
+            <h3>
+                Soft Tailored Top
+            </h3>
+
+            <p>
+                EGP 849
+            </p>
+
+        </div>
+
+
+        <div class="arrival-card">
+
+            <div
+                style="
+                    height:330px;
+                    background:#eee;
+                "
+            ></div>
+
+            <h3>
+                Everyday Bag
+            </h3>
+
+            <p>
+                EGP 1,199
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CREATE YOUR PIECE
+========================= -->
+
+<section id="custom">
+
+    <div class="section-title">
+
+        <h2>
+            CREATE YOUR PIECE
+        </h2>
+
+        <p>
+            Build something that feels completely yours.
+        </p>
+
+    </div>
+
+
+    <div class="builder">
+
+
+        <!-- BASE -->
+
+        <div class="builder-step">
+
+            <h3>
+                01 — CHOOSE YOUR BASE
+            </h3>
+
+            <div class="builder-options">
+
+                <button
+                    class="builder-option"
+                    data-type="base"
+                    data-name="Dress"
+                    data-price="1000"
+                >
+                    DRESS<br>
+                    EGP 1,000
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="base"
+                    data-name="Blouse"
+                    data-price="700"
+                >
+                    BLOUSE<br>
+                    EGP 700
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="base"
+                    data-name="Skirt"
+                    data-price="650"
+                >
+                    SKIRT<br>
+                    EGP 650
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="base"
+                    data-name="Set"
+                    data-price="1300"
+                >
+                    SET<br>
+                    EGP 1,300
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FABRIC -->
+
+        <div class="builder-step">
+
+            <h3>
+                02 — CHOOSE YOUR FABRIC
+            </h3>
+
+            <div class="builder-options">
+
+                <button
+                    class="builder-option"
+                    data-type="fabric"
+                    data-name="Satin"
+                    data-price="250"
+                >
+                    SATIN<br>
+                    + EGP 250
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="fabric"
+                    data-name="Linen"
+                    data-price="180"
+                >
+                    LINEN<br>
+                    + EGP 180
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="fabric"
+                    data-name="Cotton"
+                    data-price="120"
+                >
+                    COTTON<br>
+                    + EGP 120
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="fabric"
+                    data-name="Velvet"
+                    data-price="300"
+                >
+                    VELVET<br>
+                    + EGP 300
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- COLOR -->
+
+        <div class="builder-step">
+
+            <h3>
+                03 — CHOOSE YOUR COLOR
+            </h3>
+
+            <div class="builder-options">
+
+                <button
+                    class="builder-option"
+                    data-type="color"
+                    data-name="Black"
+                    data-price="0"
+                >
+                    BLACK
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="color"
+                    data-name="White"
+                    data-price="0"
+                >
+                    WHITE
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="color"
+                    data-name="Beige"
+                    data-price="50"
+                >
+                    BEIGE<br>
+                    + EGP 50
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="color"
+                    data-name="Burgundy"
+                    data-price="50"
+                >
+                    BURGUNDY<br>
+                    + EGP 50
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DETAIL -->
+
+        <div class="builder-step">
+
+            <h3>
+                04 — CHOOSE YOUR HANDMADE DETAIL
+            </h3>
+
+            <div class="builder-options">
+
+                <button
+                    class="builder-option"
+                    data-type="detail"
+                    data-name="Embroidery"
+                    data-price="250"
+                >
+                    EMBROIDERY<br>
+                    + EGP 250
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="detail"
+                    data-name="Pearls"
+                    data-price="200"
+                >
+                    PEARLS<br>
+                    + EGP 200
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="detail"
+                    data-name="Ribbons"
+                    data-price="100"
+                >
+                    RIBBONS<br>
+                    + EGP 100
+                </button>
+
+                <button
+                    class="builder-option"
+                    data-type="detail"
+                    data-name="None"
+                    data-price="0"
+                >
+                    NONE
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRICE -->
+
+        <div class="builder-price">
+
+            <span>
+                ESTIMATED PRICE
+            </span>
+
+            <span>
+                EGP <span id="builder-price">0</span>
+            </span>
+
+        </div>
+
+
+        <div
+            id="custom-order-box"
+            style="display:none;"
+        >
+
+            <button
+                class="custom-order-button"
+                id="place-custom-order"
+            >
+                PLACE YOUR ORDER
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="about-section"
+    id="about"
+>
+
+    <div class="about-container">
+
+        <div class="about-label">
+            OUR STORY
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-title">
+
+                <h2>
+                    BE<br>
+                    DIFFERENT.
+                </h2>
+
+            </div>
+
+            <div class="about-text">
+
+                <p>
+                    BE DIFFERENT is a modern fashion concept created
+                    for women who want their style to feel personal,
+                    confident and different.
+                </p>
+
+                <p>
+                    We believe fashion is not about following every trend.
+                    It's about choosing what represents you.
+                </p>
+
+                <p>
+                    From everyday essentials to carefully selected pieces
+                    and custom designs, every detail is made to give you
+                    the freedom to create your own style.
+                </p>
+
+                <div class="about-signature">
+                    WEAR YOUR DIFFERENCE.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
+    <div class="section-title">
+
+        <h2>
+            LET'S TALK
+        </h2>
+
+        <p>
+            Have a question or want to create something custom?
+        </p>
+
+        <a
+            href="https://wa.me/201034911626"
+            target="_blank"
+        >
+            CONTACT US ON WHATSAPP
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        BE DIFFERENT
+    </div>
+
+    <p>
+        © 2026 BE DIFFERENT. ALL RIGHTS RESERVED.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     QUICK VIEW
+========================= -->
+
+<div
+    class="quick-view-overlay"
+    id="quick-view-overlay"
+>
+
+    <div class="quick-view-modal">
+
+        <button
+            class="quick-view-close"
+            id="quick-view-close"
+        >
+            ×
+        </button>
+
+        <div
+            class="quick-view-image"
+            id="quick-view-image"
+        ></div>
+
+        <div class="quick-view-content">
+
+            <h2 id="quick-view-name">
+                Product
+            </h2>
+
+            <div
+                class="quick-view-price"
+                id="quick-view-price"
+            >
+                EGP 0
+            </div>
+
+            <p
+                id="quick-view-description"
+                style="
+                    color:#666;
+                    font-size:14px;
+                    line-height:1.8;
+                    margin-bottom:25px;
+                "
+            >
+                A carefully selected BE DIFFERENT piece
+                designed for your everyday style.
+            </p>
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:12px;
+                    margin-bottom:20px;
+                "
+            >
+
+                <button
+                    id="quick-minus"
+                    style="
+                        width:35px;
+                        height:35px;
+                        border:1px solid #ddd;
+                        background:#fff;
+                    "
+                >
+                    −
+                </button>
+
+                <span id="quick-quantity">
+                    1
+                </span>
+
+                <button
+                    id="quick-plus"
+                    style="
+                        width:35px;
+                        height:35px;
+                        border:1px solid #ddd;
+                        background:#fff;
+                    "
+                >
+                    +
+                </button>
+
+            </div>
+
+            <button
+                id="quick-add"
+                class="add-to-cart"
+            >
+                ADD TO CART
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =========================
+       CART
+    ========================= */
+
+    let cart = JSON.parse(
+        localStorage.getItem("beDifferentCart")
+    ) || [];
+
+    const cartDrawer =
+        document.getElementById("cart-drawer");
+
+    const cartOverlay =
+        document.getElementById("cart-overlay");
+
+    const cartItems =
+        document.getElementById("cart-items");
+
+    const cartCount =
+        document.getElementById("cart-count");
+
+    const cartSubtotal =
+        document.getElementById("cart-subtotal");
+
+
+    function saveCart() {
+
+        localStorage.setItem(
+            "beDifferentCart",
+            JSON.stringify(cart)
+        );
+
+    }
+
+
+    function updateCart() {
+
+        cartItems.innerHTML = "";
+
+        let total = 0;
+        let count = 0;
+
+
+        if (cart.length === 0) {
+
+            cartItems.innerHTML = `
+                <div style="
+                    padding:40px 0;
+                    text-align:center;
+                    color:#777;
+                ">
+                    YOUR CART IS EMPTY
+                </div>
+            `;
+
+        }
+
+
+        cart.forEach(function (item, index) {
+
+            total += item.price * item.quantity;
+            count += item.quantity;
+
+
+            const div =
+                document.createElement("div");
+
+            div.className = "cart-item";
+
+            div.innerHTML = `
+
+                <h4>${item.name}</h4>
+
+                <div class="cart-item-price">
+                    EGP ${item.price}
+                </div>
+
+                <div class="cart-controls">
+
+                    <button data-action="minus">
+                        −
+                    </button>
+
+                    <span>
+                        ${item.quantity}
+                    </span>
+
+                    <button data-action="plus">
+                        +
+                    </button>
+
+                    <button
+                        data-action="remove"
+                        style="
+                            margin-left:auto;
+                            width:auto;
+                            padding:0 10px;
+                        "
+                    >
+                        REMOVE
+                    </button>
+
+                </div>
+            `;
+
+
+            div.querySelector(
+                '[data-action="minus"]'
+            ).addEventListener("click", function () {
+
+                if (item.quantity > 1) {
+                    item.quantity--;
+                } else {
+                    cart.splice(index, 1);
+                }
+
+                saveCart();
+                updateCart();
+
+            });
+
+
+            div.querySelector(
+                '[data-action="plus"]'
+            ).addEventListener("click", function () {
+
+                item.quantity++;
+
+                saveCart();
+                updateCart();
+
+            });
+
+
+            div.querySelector(
+                '[data-action="remove"]'
+            ).addEventListener("click", function () {
+
+                cart.splice(index, 1);
+
+                saveCart();
+                updateCart();
+
+            });
+
+
+            cartItems.appendChild(div);
+
+        });
+
+
+        cartCount.textContent = count;
+
+        cartSubtotal.textContent =
+            total.toLocaleString();
+
+    }
+
+
+    function addToCart(name, price, quantity = 1) {
+
+        const existing =
+            cart.find(item => item.name === name);
+
+
+        if (existing) {
+
+            existing.quantity += quantity;
+
+        } else {
+
+            cart.push({
+                name: name,
+                price: Number(price),
+                quantity: quantity
+            });
+
+        }
+
+
+        saveCart();
+        updateCart();
+
+
+        cartDrawer.classList.add("open");
+        cartOverlay.classList.add("open");
+
+    }
+
+
+    document
+        .getElementById("open-cart")
+        .addEventListener("click", function () {
+
+            cartDrawer.classList.add("open");
+            cartOverlay.classList.add("open");
+
+        });
+
+
+    document
+        .getElementById("close-cart")
+        .addEventListener("click", function () {
+
+            cartDrawer.classList.remove("open");
+            cartOverlay.classList.remove("open");
+
+        });
+
+
+    cartOverlay.addEventListener(
+        "click",
+        function () {
+
+            cartDrawer.classList.remove("open");
+            cartOverlay.classList.remove("open");
+
+        }
+    );
+
+
+    document
+        .querySelectorAll(".add-to-cart")
+        .forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+                    const name =
+                        button.dataset.name;
+
+                    const price =
+                        Number(button.dataset.price);
+
+
+                    addToCart(name, price);
+
+
+                    const original =
+                        button.textContent;
+
+                    button.textContent =
+                        "ADDED ✓";
+
+
+                    setTimeout(function () {
+
+                        button.textContent =
+                            original;
+
+                    }, 900);
+
+                }
+            );
+
+        });
+
+
+    updateCart();
+
+
+    /* =========================
+       CHECKOUT
+    ========================= */
+
+    const checkoutOverlay =
+        document.getElementById(
+            "checkout-overlay"
+        );
+
+
+    document
+        .getElementById("open-checkout")
+        .addEventListener("click", function () {
+
+            if (cart.length === 0) {
+
+                alert("YOUR CART IS EMPTY.");
+
+                return;
+
+            }
+
+            checkoutOverlay.style.display =
+                "flex";
+
+        });
+
+
+    document
+        .getElementById("close-checkout")
+        .addEventListener("click", function () {
+
+            checkoutOverlay.style.display =
+                "none";
+
+        });
+
+
+    document
+        .getElementById("checkout-form")
+        .addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                if (cart.length === 0) {
+
+                    alert("YOUR CART IS EMPTY.");
+
+                    return;
+
+                }
+
+
+                const name =
+                    document.getElementById(
+                        "customer-name"
+                    ).value.trim();
+
+
+                const phone =
+                    document.getElementById(
+                        "customer-phone"
+                    ).value.trim();
+
+
+                const address =
+                    document.getElementById(
+                        "customer-address"
+                    ).value.trim();
+
+
+                const notes =
+                    document.getElementById(
+                        "customer-notes"
+                    ).value.trim();
+
+
+                if (!name || !phone || !address) {
+
+                    alert(
+                        "PLEASE COMPLETE YOUR INFORMATION."
+                    );
+
+                    return;
+
+                }
+
+
+                let message =
+                    "*BE DIFFERENT ORDER*%0A%0A";
+
+
+                message +=
+                    "*CUSTOMER:* " +
+                    encodeURIComponent(name) +
+                    "%0A";
+
+
+                message +=
+                    "*PHONE:* " +
+                    encodeURIComponent(phone) +
+                    "%0A";
+
+
+                message +=
+                    "*ADDRESS:* " +
+                    encodeURIComponent(address) +
+                    "%0A";
+
+
+                if (notes) {
+
+                    message +=
+                        "*NOTES:* " +
+                        encodeURIComponent(notes) +
+                        "%0A";
+
+                }
+
+
+                message += "%0A*ITEMS:*%0A";
+
+
+                cart.forEach(function (item) {
+
+                    message +=
+                        encodeURIComponent(
+                            item.name
+                        ) +
+                        " × " +
+                        item.quantity +
+                        " — EGP " +
+                        (
+                            item.price *
+                            item.quantity
+                        ) +
+                        "%0A";
+
+                });
+
+
+                const total =
+                    cart.reduce(
+                        (sum, item) =>
+                            sum +
+                            item.price *
+                            item.quantity,
+                        0
+                    );
+
+
+                message +=
+                    "%0A*TOTAL:* EGP " +
+                    total;
+
+
+                window.open(
+                    "https://wa.me/201034911626?text=" +
+                    message,
+                    "_blank"
+                );
+
+
+                cart = [];
+
+                saveCart();
+                updateCart();
+
+
+                checkoutOverlay.style.display =
+                    "none";
+
+                document
+                    .getElementById("checkout-form")
+                    .reset();
+
+            }
+        );
+
+
+    /* =========================
+       CATEGORY FILTER
+    ========================= */
+
+    const categoryButtons =
+        document.querySelectorAll(
+            ".category-button"
+        );
+
+
+    const products =
+        document.querySelectorAll(
+            ".shop-product"
+        );
+
+
+    categoryButtons.forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                categoryButtons.forEach(
+                    function (btn) {
+
+                        btn.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add("active");
+
+
+                const category =
+                    button.dataset.category;
+
+
+                products.forEach(
+                    function (product) {
+
+                        if (
+                            category === "all" ||
+                            product.dataset.category ===
+                            category
+                        ) {
+
+                            product.style.display =
+                                "";
+
+                        } else {
+
+                            product.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =========================
+       BUILDER
+    ========================= */
+
+    let builder = {
+
+        base: null,
+        fabric: null,
+        color: null,
+        detail: null
+
+    };
+
+
+    const builderPrice =
+        document.getElementById(
+            "builder-price"
+        );
+
+
+    const customOrderBox =
+        document.getElementById(
+            "custom-order-box"
+        );
+
+
+    document
+        .querySelectorAll(".builder-option")
+        .forEach(function (option) {
+
+            option.addEventListener(
+                "click",
+                function () {
+
+                    const type =
+                        option.dataset.type;
+
+
+                    document
+                        .querySelectorAll(
+                            `.builder-option[data-type="${type}"]`
+                        )
+                        .forEach(function (item) {
+
+                            item.classList.remove(
+                                "selected"
+                            );
+
+                        });
+
+
+                    option.classList.add(
+                        "selected"
+                    );
+
+
+                    builder[type] = {
+
+                        name:
+                            option.dataset.name,
+
+                        price:
+                            Number(
+                                option.dataset.price
+                            )
+
+                    };
+
+
+                    let total = 0;
+
+
+                    Object.values(builder)
+                        .forEach(function (item) {
+
+                            if (item) {
+
+                                total +=
+                                    item.price;
+
+                            }
+
+                        });
+
+
+                    builderPrice.textContent =
+                        total.toLocaleString();
+
+
+                    if (
+                        builder.base &&
+                        builder.fabric &&
+                        builder.color &&
+                        builder.detail
+                    ) {
+
+                        customOrderBox.style.display =
+                            "block";
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    document
+        .getElementById("place-custom-order")
+        .addEventListener(
+            "click",
+            function () {
+
+                let total = 0;
+
+
+                Object.values(builder)
+                    .forEach(function (item) {
+
+                        if (item) {
+
+                            total +=
+                                item.price;
+
+                        }
+
+                    });
+
+
+                let message =
+                    "*BE DIFFERENT CUSTOM ORDER*%0A%0A";
+
+
+                message +=
+                    "*BASE:* " +
+                    encodeURIComponent(
+                        builder.base.name
+                    ) +
+                    "%0A";
+
+
+                message +=
+                    "*FABRIC:* " +
+                    encodeURIComponent(
+                        builder.fabric.name
+                    ) +
+                    "%0A";
+
+
+                message +=
+                    "*COLOR:* " +
+                    encodeURIComponent(
+                        builder.color.name
+                    ) +
+                    "%0A";
+
+
+                message +=
+                    "*DETAIL:* " +
+                    encodeURIComponent(
+                        builder.detail.name
+                    ) +
+                    "%0A";
+
+
+                message +=
+                    "%0A*ESTIMATED PRICE:* EGP " +
+                    total;
+
+
+                window.open(
+                    "https://wa.me/201034911626?text=" +
+                    message,
+                    "_blank"
+                );
+
+            }
+        );
+
+
+    /* =========================
+       QUICK VIEW
+    ========================= */
+
+    const quickOverlay =
+        document.getElementById(
+            "quick-view-overlay"
+        );
+
+
+    const quickName =
+        document.getElementById(
+            "quick-view-name"
+        );
+
+
+    const quickPrice =
+        document.getElementById(
+            "quick-view-price"
+        );
+
+
+    const quickQuantity =
+        document.getElementById(
+            "quick-quantity"
+        );
+
+
+    const quickAdd =
+        document.getElementById(
+            "quick-add"
+        );
+
+
+    let quickProduct = null;
+    let quickQty = 1;
+
+
+    products.forEach(function (product) {
+
+        product.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target.closest(
+                        ".add-to-cart"
+                    ) ||
+                    event.target.closest(
+                        ".wishlist-btn"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                quickProduct = {
+
+                    name:
+                        product.dataset.name,
+
+                    price:
+                        Number(
+                            product.dataset.price
+                        )
+
+                };
+
+
+                quickQty = 1;
+
+                quickQuantity.textContent =
+                    quickQty;
+
+
+                quickName.textContent =
+                    quickProduct.name;
+
+
+                quickPrice.textContent =
+                    "EGP " +
+                    quickProduct.price.toLocaleString();
+
+
+                quickOverlay.classList.add(
+                    "active"
+                );
+
+            }
+        );
+
+    });
+
+
+    document
+        .getElementById("quick-view-close")
+        .addEventListener(
+            "click",
+            function () {
+
+                quickOverlay.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    quickOverlay.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target ===
+                quickOverlay
+            ) {
+
+                quickOverlay.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+
+    document
+        .getElementById("quick-minus")
+        .addEventListener(
+            "click",
+            function () {
+
+                if (quickQty > 1) {
+
+                    quickQty--;
+
+                    quickQuantity.textContent =
+                        quickQty;
+
+                }
+
+            }
+        );
+
+
+    document
+        .getElementById("quick-plus")
+        .addEventListener(
+            "click",
+            function () {
+
+                quickQty++;
+
+                quickQuantity.textContent =
+                    quickQty;
+
+            }
+        );
+
+
+    quickAdd.addEventListener(
+        "click",
+        function () {
+
+            if (!quickProduct) {
+                return;
+            }
+
+
+            addToCart(
+                quickProduct.name,
+                quickProduct.price,
+                quickQty
+            );
+
+
+            quickAdd.textContent =
+                "ADDED ✓";
+
+
+            setTimeout(function () {
+
+                quickAdd.textContent =
+                    "ADD TO CART";
+
+                quickOverlay.classList.remove(
+                    "active"
+                );
+
+            }, 700);
+
+        }
+    );
+
+
+    /* =========================
+       WISHLIST
+    ========================= */
+
+    let wishlist =
+        JSON.parse(
+            localStorage.getItem(
+                "beDifferentWishlist"
+            )
+        ) || [];
+
+
+    const wishlistDrawer =
+        document.getElementById(
+            "wishlist-drawer"
+        );
+
+
+    const wishlistOverlay =
+        document.getElementById(
+            "wishlist-overlay"
+        );
+
+
+    const wishlistItems =
+        document.getElementById(
+            "wishlist-items"
+        );
+
+
+    const wishlistCount =
+        document.getElementById(
+            "wishlist-count"
+        );
+
+
+    function saveWishlist() {
+
+        localStorage.setItem(
+            "beDifferentWishlist",
+            JSON.stringify(wishlist)
+        );
+
+    }
+
+
+    function updateWishlist() {
+
+        wishlistCount.textContent =
+            wishlist.length;
+
+
+        wishlistItems.innerHTML = "";
+
+
+        if (wishlist.length === 0) {
+
+            wishlistItems.innerHTML = `
+                <div style="
+                    text-align:center;
+                    padding:50px 10px;
+                    color:#777;
+                ">
+                    YOUR WISHLIST IS EMPTY
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        wishlist.forEach(function (item, index) {
+
+            const div =
+                document.createElement("div");
+
+
+            div.style.cssText = `
+                padding:20px 0;
+                border-bottom:1px solid #eee;
+            `;
+
+
+            div.innerHTML = `
+
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    gap:15px;
+                    align-items:center;
+                ">
+
+                    <div>
+
+                        <h4 style="margin-bottom:6px;">
+                            ${item.name}
+                        </h4>
+
+                        <p style="
+                            font-size:13px;
+                            font-weight:700;
+                        ">
+                            EGP ${item.price.toLocaleString()}
+                        </p>
+
+                    </div>
+
+                    <button
+                        data-remove-wishlist
+                        style="
+                            border:none;
+                            background:none;
+                            font-size:20px;
+                        "
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+                <button
+                    data-wishlist-cart
+                    class="add-to-cart"
+                    style="margin-top:14px;"
+                >
+                    ADD TO CART
+                </button>
+            `;
+
+
+            div.querySelector(
+                "[data-remove-wishlist]"
+            ).addEventListener(
+                "click",
+                function () {
+
+                    wishlist.splice(index, 1);
+
+                    saveWishlist();
+                    updateWishlist();
+
+                }
+            );
+
+
+            div.querySelector(
+                "[data-wishlist-cart]"
+            ).addEventListener(
+                "click",
+                function () {
+
+                    addToCart(
+                        item.name,
+                        item.price
+                    );
+
+                }
+            );
+
+
+            wishlistItems.appendChild(div);
+
+        });
+
+    }
+
+
+    function toggleWishlist(name, price) {
+
+        const existing =
+            wishlist.find(
+                item => item.name === name
+            );
+
+
+        if (existing) {
+
+            wishlist =
+                wishlist.filter(
+                    item => item.name !== name
+                );
+
+        } else {
+
+            wishlist.push({
+
+                name: name,
+                price: Number(price)
+
+            });
+
+        }
+
+
+        saveWishlist();
+        updateWishlist();
+
+    }
+
+
+    document
+        .querySelectorAll(".wishlist-btn")
+        .forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+
+                    toggleWishlist(
+                        button.dataset.name,
+                        button.dataset.price
+                    );
+
+
+                    const exists =
+                        wishlist.some(
+                            item =>
+                                item.name ===
+                                button.dataset.name
+                        );
+
+
+                    button.textContent =
+                        exists ? "♥" : "♡";
+
+                }
+            );
+
+        });
+
+
+    document
+        .getElementById("open-wishlist")
+        .addEventListener(
+            "click",
+            function () {
+
+                updateWishlist();
+
+                wishlistDrawer.style.right =
+                    "0";
+
+                wishlistOverlay.style.opacity =
+                    "1";
+
+                wishlistOverlay.style.visibility =
+                    "visible";
+
+            }
+        );
+
+
+    function closeWishlist() {
+
+        wishlistDrawer.style.right =
+            "-420px";
+
+        wishlistOverlay.style.opacity =
+            "0";
+
+        wishlistOverlay.style.visibility =
+            "hidden";
+
+    }
+
+
+    document
+        .getElementById("close-wishlist")
+        .addEventListener(
+            "click",
+            closeWishlist
+        );
+
+
+    wishlistOverlay.addEventListener(
+        "click",
+        closeWishlist
+    );
+
+
+    updateWishlist();
+
+
+    /* =========================
+       INITIAL WISHLIST HEARTS
+    ========================= */
+
+    document
+        .querySelectorAll(".wishlist-btn")
+        .forEach(function (button) {
+
+            const exists =
+                wishlist.some(
+                    item =>
+                        item.name ===
+                        button.dataset.name
+                );
+
+
+            if (exists) {
+
+                button.textContent = "♥";
+
+            }
+
+        });
+
+});
+
+</script>
+<script>
+const revealElements = document.querySelectorAll(
+    '.shop-product, .new-arrival, .builder-step, .about-content, .contact-section'
+);
+
+revealElements.forEach(element => {
+    element.classList.add('scroll-reveal');
+});
+
+const revealObserver = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+</script><script src="smooth-scroll.js"></script>
+</body>
+</html>

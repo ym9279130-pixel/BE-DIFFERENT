@@ -1,0 +1,386 @@
+/* =====================================================
+   BE DIFFERENT — COMPLETE MOTION SYSTEM
+   DOES NOT CHANGE THE ORIGINAL DESIGN
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =====================================================
+   PRODUCT HOVER
+===================================================== */
+
+.shop-product {
+    transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.6s ease !important;
+}
+
+.shop-product:hover {
+    transform: translateY(-6px) !important;
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE HOVER
+===================================================== */
+
+.shop-image {
+    overflow: hidden;
+}
+
+.shop-image img {
+    transition:
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.shop-product:hover .shop-image img {
+    transform: scale(1.035) !important;
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   PRODUCT STAGGER
+===================================================== */
+
+.shop-product:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.shop-product:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+.shop-product:nth-child(3) {
+    transition-delay: 0.19s;
+}
+
+.shop-product:nth-child(4) {
+    transition-delay: 0.26s;
+}
+
+.shop-product:nth-child(5) {
+    transition-delay: 0.33s;
+}
+
+.shop-product:nth-child(6) {
+    transition-delay: 0.40s;
+}
+
+.shop-product:nth-child(7) {
+    transition-delay: 0.47s;
+}
+
+.shop-product:nth-child(8) {
+    transition-delay: 0.54s;
+}
+
+.shop-product:nth-child(9) {
+    transition-delay: 0.61s;
+}
+
+
+/* =====================================================
+   IMAGE SCROLL ANIMATION
+===================================================== */
+
+.scroll-reveal .shop-image img {
+    transform: scale(1.06);
+
+    transition:
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.show .shop-image img {
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.add-to-cart,
+.hero-button,
+.category-button,
+.checkout-button,
+#place-custom-order {
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.add-to-cart:hover,
+.hero-button:hover,
+.category-button:hover,
+.checkout-button:hover,
+#place-custom-order:hover {
+    transform: translateY(-2px) !important;
+}
+
+
+/* =====================================================
+   WISHLIST
+===================================================== */
+
+.wishlist-btn {
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease !important;
+}
+
+.wishlist-btn:hover {
+    transform: scale(1.07) !important;
+}
+
+
+/* =====================================================
+   QUICK VIEW
+===================================================== */
+
+.quick-view-modal {
+    animation:
+        softQuickView
+        0.45s
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes softQuickView {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   CART BOUNCE
+===================================================== */
+
+#cart-button.cart-bounce {
+    animation: softCartBounce 0.5s ease;
+}
+
+@keyframes softCartBounce {
+
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.08);
+    }
+
+    70% {
+        transform: scale(0.98);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   ADDED TO CART
+===================================================== */
+
+.add-to-cart.added-effect {
+    animation: softAdded 0.45s ease;
+}
+
+@keyframes softAdded {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.97);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   HERO ENTRANCE
+===================================================== */
+
+.hero-section {
+    animation:
+        heroEnter
+        1s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+.hero-section h1 {
+    animation:
+        heroTitleEnter
+        1s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.15s
+        both;
+}
+
+.hero-section p {
+    animation:
+        heroTextEnter
+        0.9s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.3s
+        both;
+}
+
+.hero-section .hero-button {
+    animation:
+        heroButtonEnter
+        0.8s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.45s
+        both;
+}
+
+@keyframes heroEnter {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes heroTitleEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes heroTextEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes heroButtonEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+.about-title,
+.about-text {
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =====================================================
+   CATEGORY BUTTONS
+===================================================== */
+
+.category-button {
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.5s ease !important;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .scroll-reveal,
+    .shop-product,
+    .shop-image img,
+    .about-title,
+    .about-text {
+        opacity: 1;
+        transform: none;
+        transition: none !important;
+    }
+
+    .hero-section,
+    .hero-section h1,
+    .hero-section p,
+    .hero-section .hero-button {
+        animation: none !important;
+    }
+
+}
